@@ -52,7 +52,6 @@ class MyApp extends StatelessWidget {
                 : ThemeMode.dark,
             onGenerateRoute: AppRoutes().onGenerateRoute,
             initialRoute: AppRoutes.filter,
-            // home: FilterPage(),
           );
         },
       ),

@@ -1,6 +1,7 @@
 import 'package:diamond_catalog/logic/blocs/cart/cart_bloc.dart';
 import 'package:diamond_catalog/logic/blocs/diamond/filter/diamond_filter_bloc.dart';
 import 'package:diamond_catalog/logic/blocs/diamond/sort/diamond_sort_bloc.dart';
+import 'package:diamond_catalog/view/widgets/cart_button.dart';
 import 'package:diamond_catalog/view/widgets/diamond_card.dart';
 import 'package:diamond_catalog/view/widgets/sort_options_dialog.dart';
 import 'package:flutter/material.dart';
@@ -27,11 +28,15 @@ class _ResultPageState extends State<ResultPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(''),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            context.read<DiamondFilterBloc>().add(FilterReset());
+            Navigator.pop(context);
+          },
+        ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.shopping_cart_outlined),
-            onPressed: () => Navigator.pushNamed(context, '/cart'),
-          ),
+          CartButton(),
           IconButton(
             icon: const Icon(Icons.sort),
             onPressed: _showSortOptions,

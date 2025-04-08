@@ -13,55 +13,62 @@ class CartSummaryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                // Text summary
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildSummaryRow(
-                        "Total Items",
-                        cartState.items.length.toString(),
-                        context,
-                      ),
-                      const SizedBox(height: 8.0),
-                      _buildSummaryRow(
-                        "Total Carat",
-                        cartState.totalCarat.toStringAsFixed(2),
-                        context,
-                      ),
-                      const SizedBox(height: 8.0),
-                      _buildSummaryRow(
-                        "Total Price",
-                        '\$${cartState.totalPrice.toStringAsFixed(2)}',
-                        context,
-                      ),
-                      const SizedBox(height: 8.0),
-                      _buildSummaryRow(
-                        "Average Price",
-                        '\$${cartState.averagePrice.toStringAsFixed(2)}',
-                        context,
-                      ),
-                      const SizedBox(height: 8.0),
-                      _buildSummaryRow(
-                        "Average Discount",
-                        '${cartState.averageDiscount.toStringAsFixed(2)}%',
-                        context,
-                      ),
-                    ],
+    return Material(
+      elevation: 4,
+      borderRadius: BorderRadius.circular(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  // Text summary
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildSummaryRow(
+                          "Total Items",
+                          cartState.items.length.toString(),
+                          context,
+                        ),
+                        const SizedBox(height: 8.0),
+                        _buildSummaryRow(
+                          "Total Carat",
+                          cartState.totalCarat.toStringAsFixed(2),
+                          context,
+                        ),
+                        const SizedBox(height: 8.0),
+                        _buildSummaryRow(
+                          "Total Price",
+                          '\$${cartState.totalPrice.toStringAsFixed(2)}',
+                          context,
+                        ),
+                        const SizedBox(height: 8.0),
+                        _buildSummaryRow(
+                          "Average Price",
+                          '\$${cartState.averagePrice.toStringAsFixed(2)}',
+                          context,
+                        ),
+                        const SizedBox(height: 8.0),
+                        _buildSummaryRow(
+                          "Average Discount",
+                          '${cartState.averageDiscount.toStringAsFixed(2)}%',
+                          context,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16.0),
-          ],
+                ],
+              ),
+              const SizedBox(height: 16.0),
+            ],
+          ),
         ),
       ),
     );

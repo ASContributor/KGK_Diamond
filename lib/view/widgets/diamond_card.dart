@@ -42,12 +42,12 @@ class _DiamondCardState extends State<DiamondCard> {
             ),
             child: ListTile(
               title: Text(
-                '${"lotId"}: ${widget.diamond.lotId}',
+                '${"LotId"}: ${widget.diamond.lotId}',
                 style: theme.textTheme.titleMedium,
               ),
               subtitle: Container(
                 child: Text(
-                  '${widget.diamond.carat} ${"caratWeight"} | ${widget.diamond.shape} | ${widget.diamond.color} | ${widget.diamond.clarity}',
+                  '${'Carat :'} ${widget.diamond.carat}  |${'Shape :'} ${widget.diamond.shape} |${'Color :'} ${widget.diamond.color} |${'Clarity :'} ${widget.diamond.clarity}',
                 ),
               ),
               trailing: Container(
